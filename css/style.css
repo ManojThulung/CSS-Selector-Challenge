@@ -1,0 +1,192 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  background-color: #f1f8e9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.heading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0px;
+  color: #4e342e;
+}
+
+.sub-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-bottom: 30px;
+  color: #5d4037;
+}
+
+.sub-heading div {
+  display: flex;
+  align-items: center;
+}
+
+.sub-heading .back {
+  font-size: 2.5rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sub-heading .back:hover {
+  color: #bf360c;
+}
+
+.sub-heading span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 0px 10px;
+}
+
+.challenge-desc,
+.challenge-desc-2 {
+  max-width: 80%;
+  margin: auto;
+}
+
+.challenge-desc .text-heading {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+.challenge-desc p {
+  padding: 15px 0px;
+  line-height: 1.5rem;
+}
+
+.html-content-cover {
+  max-width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.html-content {
+  padding: 20px;
+  font-family: Consolas;
+  background-color: #4e342e;
+  color: white;
+  border-radius: 5px;
+}
+
+.html-content tag-name {
+  color: #ef5350;
+}
+
+.html-content class-name {
+  color: #ffee58;
+}
+
+.challenge-desc {
+  padding: 10px 0px;
+}
+
+.challenge-desc-2 {
+  padding: 20px 0px;
+}
+
+.challenge-desc-2 .text-highlight {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.user-message {
+  font-size: 1.6rem;
+  color: #303f9f;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
+
+.input-sec,
+.btn-sec {
+  max-width: 80%;
+  margin: auto;
+  padding: 10px 10px;
+}
+
+.input-sec input {
+  width: 100%;
+  font-family: Consolas;
+  padding: 4px;
+  font-size: 1.2rem;
+}
+
+.input-sec input::placeholder {
+  opacity: 0.8;
+}
+
+.btn-sec {
+  text-align: right;
+}
+
+.btn-sec button {
+  font-size: 1rem;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #e08703;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-sec button:hover {
+  background-color: #df491c;
+}
+
+@media (max-width: 1200px) {
+  .sub-heading {
+    justify-content: space-around;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 617px) {
+  .html-content-cover,
+  .input-sec,
+  .btn-sec {
+    max-width: 90%;
+  }
+
+  .html-content {
+    font-size: 1.05rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .challenge-desc,
+  .challenge-desc-2 {
+    max-width: 90%;
+  }
+
+  .html-content-cover {
+    padding: 5px;
+  }
+  .html-content {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
