@@ -76,6 +76,24 @@ body {
   line-height: 1.5rem;
 }
 
+.challenge-end {
+  color: #b71c1c;
+  text-align: center;
+  display: none;
+}
+
+.challenge-end .text-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.challenge-end p {
+  font-size: 1.3rem;
+  padding: 5px 0px 20px 0px;
+  line-height: 1.5rem;
+}
+
 .html-content-cover {
   max-width: 80%;
   margin: auto;
@@ -152,8 +170,17 @@ body {
   color: white;
 }
 
-.btn-sec button:hover {
+.btn-sec .btn-run:hover {
   background-color: #df491c;
+}
+
+.btn-sec .btn-exit {
+  background-color: #2196f3;
+  display: none;
+}
+
+.btn-sec .btn-exit:hover {
+  background-color: #1565c0;
 }
 
 @media (max-width: 1200px) {

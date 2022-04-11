@@ -5,6 +5,9 @@ const questionSec = document.querySelector(".challenge-desc-2");
 const btnRun = document.querySelector(".btn-run");
 const userMessage = document.querySelector(".user-message");
 const btnBack = document.querySelector(".back");
+const btnExit = document.querySelector(".btn-exit");
+const challengeEndMsg = document.querySelector(".challenge-end");
+const challengeDesc = document.querySelector(".challenge-desc");
 
 const challenges = [
   {
@@ -135,17 +138,44 @@ const challenges = [
     question: `From the above, select the second element
         <span class="text-highlight">&lt;p&gt;</span>.`,
   },
+  {
+    challenge: "No Challenge",
+    htmlContent: `&lt;<tag-name>p</tag-name>&gt; CONGRATULATIONS !!
+          &lt;/<tag-name>p</tag-name>&gt; <br />
+          &lt;<tag-name>p</tag-name>&gt; No challenges left
+          &lt;/<tag-name>p</tag-name>&gt; <br />`,
+    question: ``,
+  },
 ];
 
 // function to display level
 const displayChallenge = function (stage) {
   stage = stage - 1;
-
   challenge_num.textContent = challenges[stage].challenge;
   htmlContentSec.innerHTML = challenges[stage].htmlContent;
   questionSec.innerHTML = challenges[stage].question;
   userMessage.style.display = "none";
   document.querySelector(".input-sec input").value = "";
+
+  challengeEnd("none", "none", "inline", "block", "block");
+
+  if (stage > 9) {
+    challengeEnd("block", "block", "none", "none", "none");
+  }
+};
+
+const challengeEnd = function (
+  exitBtn,
+  endChallenge,
+  runBtn,
+  descChallenge,
+  inputStat
+) {
+  btnExit.style.display = exitBtn;
+  challengeEndMsg.style.display = endChallenge;
+  btnRun.style.display = runBtn;
+  challengeDesc.style.display = descChallenge;
+  document.querySelector(".input-sec input").style.display = inputStat;
 };
 
 const runCode = function () {
@@ -180,11 +210,12 @@ btnRun.addEventListener("click", runCode);
 
 // mover user to the previouse challenge stage
 btnBack.addEventListener("click", () => {
-  const stage =
-    parseInt(document.querySelector(".challenge-num").textContent) - 1;
+  const stage = document.querySelector(".challenge-num").textContent;
 
-  if (stage > 0) {
-    displayChallenge(stage);
+  if (stage === "No Challenge") {
+    displayChallenge(10);
+  } else if (stage > 1) {
+    displayChallenge(stage - 1);
   }
 });
 
@@ -341,7 +372,7 @@ const challenge10 = function (userInput) {
   if (userInput.trim() === "p:nth-child(2)") {
     userMessage.style.display = "block";
     setTimeout(() => {
-      displayChallenge(10);
+      displayChallenge(11);
     }, 800);
   } else {
     flashColor();
